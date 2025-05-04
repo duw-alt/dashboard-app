@@ -1,7 +1,7 @@
 {
-  "name": "country-dashboard",
+  "name": "dashboard-app",
   "version": "1.0.0",
-  "description": "A simple country dashboard application",
+  "description": "A simple dashboard application",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
