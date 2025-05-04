@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= t.dashboardTitle %></title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <%- include('partials/lang-switcher', { lang: lang }) %>
+    <div class="container">
+        <div class="header">
+            <h1><%= t.dashboardTitle %></h1>
+            <button class="logout-btn" id="logoutBtn"><%= t.logOut %></button>
+        </div>
+
+        <div class="user-info">
+            <h2><%= t.residentInfoTitle %></h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label><%= t.name %></label>
+                    <span><%= user.name || t.notSet %></span>
+                </div>
+                <div class="info-item">
+                    <label><%= t.surname %></label>
+                    <span><%= user.surname || t.notSet %></span>
+                </div>
+                <div class="info-item">
+                    <label><%= t.citizenId %></label>
+                    <span><%= user.citizenId || t.notSet %></span>
+                </div>
+                <div class="info-item">
+                    <label><%= t.apartmentNumber %></label>
+                    <span><%= user.apartmentNumber || t.notSet %></span>
+                </div>
+                <div class="info-item">
+                    <label><%= t.phoneNumber %></label>
+                    <span><%= user.phoneNumber || t.notSet %></span>
+                </div>
+                <div class="info-item">
+                    <label><%= t.email %></label>
+                    <span><%= user.email || t.notSet %></span>
+                </div>
+                <div class="info-item balance">
+                    <label><%= t.balance %></label>
+                    <span>$<%= user.balance.toFixed(2) %></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-sections">
+            <section class="transaction-history">
+                <h2><%= t.transactionHistory %></h2>
+            </section>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html> 

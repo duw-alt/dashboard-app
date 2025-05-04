@@ -1,0 +1,23 @@
+<% if (lang === 'en') { %>
+  <form id="langForm" style="position: absolute; top: 20px; right: 30px; z-index: 100;">
+    <button type="submit" name="lang" value="ka" style="background:none; border:none; font-size:2em; cursor:pointer;" title="ქართული">
+        <img src="/flags/georgia.png" alt="ქართული" style="height:2em; width:auto;">
+    </button>
+  </form>
+<% } else { %>
+  <form id="langForm" style="position: absolute; top: 20px; right: 30px; z-index: 100;">
+    <button type="submit" name="lang" value="en" style="background:none; border:none; font-size:2em; cursor:pointer;" title="English">
+        <img src="/flags/united-kingdom.png" alt="English" style="height:2em; width:auto;">
+    </button>
+  </form>
+<% } %>
+<script>
+if (document.getElementById('langForm')) {
+  document.getElementById('langForm').onsubmit = function(e) {
+    e.preventDefault();
+    var lang = e.submitter.value;
+    document.cookie = 'lang=' + lang + '; path=/';
+    window.location.search = '?lang=' + lang;
+  };
+}
+</script> 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= t.registerTitle %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <script>
+    window.errorTranslations = <%- JSON.stringify({ en: translations.en, ka: translations.ka }).replace(/</g, '\u003c') %>;
+    window.currentLang = "<%= lang %>";
+    </script>
+    <%- include('partials/lang-switcher', { lang: lang }) %>
+    <div class="container">
+        <div class="login-container">
+            <h1><%= t.registerTitle %></h1>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regCitizenId"><%= t.citizenId %></label>
+                    <input type="text" id="regCitizenId" name="citizenId" required>
+                </div>
+                <button type="button" id="checkResidentBtn"><%= t.checkBtn %></button>
+                <div id="registerError" style="color:red; margin:15px 0;"></div>
+                <div id="passwordSection" style="display:none;">
+                    <div class="form-group">
+                        <label for="regPassword"><%= t.password %></label>
+                        <input type="password" id="regPassword" name="password" required>
+                    </div>
+                    <button type="submit"><%= t.registerBtn %></button>
+                </div>
+            </form>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="/login?lang=<%= lang %>"><%= t.haveAccount %></a>
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html> 
