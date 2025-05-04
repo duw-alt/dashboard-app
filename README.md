@@ -33,7 +33,7 @@ A modern, multilingual dashboard application with secure authentication and user
 1. Clone the repository:
 ```bash
 git clone [your-repository-url]
-cd 
+cd [path-to-folder]
 ```
 
 2. Install dependencies:
